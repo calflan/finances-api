@@ -3,11 +3,9 @@ let Purchase = require('../models/purchase.model');
 
 // get all purchases
 Router.route('/').get((req, res) => {
-  // Purchase.find()
-  //   .then(purchases => res.json(purchases))
-  //   .catch(err => res.status(400).json('Error: ' + err));
-
-  res.json({status: 'UP'});
+  Purchase.find()
+    .then(purchases => res.json(purchases))
+    .catch(err => res.status(400).json('Error: ' + err));
 });
 
 // add new purchase
